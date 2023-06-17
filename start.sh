@@ -4,9 +4,9 @@ ERR=0
 
 function test_msg {
     if [ "$ERR" -eq 1 ]; then
-        echo -e "${RED}Неудачно in $1! ${NC}"  
+        echo -e "${RED}Неудачно в стадии $1! ${NC}"  
     else
-        echo -e "${GREEN}Все готово in $1! ${NC}"
+        echo -e "${GREEN}Все готово в стадии $1! ${NC}"
     fi
 }
 
@@ -14,7 +14,7 @@ function result_msg {
     local status=$1
     if [ $status -ne 0 ]; then
         ERR=1
-        echo -e "${RED} error with $2 ${NC}" >&2
+        echo -e "${RED} ошибка с $2 ${NC}" >&2
     else
         echo -e "${GREEN} ok $2 ${NC}"
     fi
@@ -74,7 +74,7 @@ test_msg "provision"
 ERR=0
 echo -e ""
 
-echo -e "${YELLOW}Настраиваю env...${NC}"
+echo -e "${YELLOW}Настраиваю окружение...${NC}"
 
 useradd max -s $(which bash) -G sudo -m
 result_msg "$?" "add user"
@@ -99,7 +99,7 @@ test_msg "creation"
 ERR=0
 echo -e ""
 
-echo -e "${YELLOW}Make tests...${NC}"
+echo -e "${YELLOW}Проверяю...${NC}"
 
 
 echo id max
