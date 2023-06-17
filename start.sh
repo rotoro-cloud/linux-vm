@@ -63,8 +63,8 @@ rm /var/lib/dpkg/lock-frontend
 rm /var/lib/dpkg/lock
 rm /var/cache/apt/archives/lock
 
-apt install -y ssh sshpass tree
-result_msg "$?" "install sshd "
+apt install -y ssh sshpass tree plocate
+result_msg "$?" "install sshd and utils"
 
 systemctl enable ssh --now
 result_msg "$?" "enable ssh"
