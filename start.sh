@@ -2,16 +2,22 @@
 
 ERR=0
 
+function test_msg {
+    if [ "$ERR" -eq 1 ]; then
+        echo -e "${RED}Неудачно in $1! ${NC}"  
+    else
+        echo -e "${GREEN}Все готово in $1! ${NC}"
+    fi
+}
+
 function result_msg {
-    "$@"
-    local status=$?
+    local status=$1
     if [ $status -ne 0 ]; then
         ERR=1
-        echo "${RED} error with $2 ${NC}" >&2
+        echo -e "${RED} error with $2 ${NC}" >&2
     else
-        echo "${GREEN}ok $2 ${NC}"
+        echo -e "${GREEN} ok $2 ${NC}"
     fi
-    return $status
 }
 
 
@@ -51,32 +57,67 @@ echo -e "${GREEN}${GREEN_TEXT}"
 echo -e ""
 echo -e "${YELLOW}Настраиваю систему...${NC}"
 
-result_msg "useradd max -s $(which bash) -G sudo -m" "add user"
+userdel -r max
+rm -rf /home/max/
+rm /var/lib/dpkg/lock-frontend
+rm /var/lib/dpkg/lock
+rm /var/cache/apt/archives/lock
 
-result_msg "sed -i '/password\trequisite\t\t\tpam_pwquality.so/ s/^#*/#/' /etc/pam.d/common-password" "patch pam1"
-result_msg "sudo sed -i 's/pam_unix.so obscure use_authtok try_first_pass yescrypt/pam_unix.so minlen=1 sha512/g' /etc/pam.d/common-password" "patch pam2"
+apt install -y ssh sshpass
+result_msg "$?" "install sshd"
 
-result_msg "echo 'max:supeRbison' | sudo chpasswdm" "upd max's pass"
+systemctl enable ssh --now
+result_msg "$?" "enable ssh"
 
-result_msg "cp -R /home/osboxes/linux-vm /home/max" "copy repo"
+echo -e ""
+test_msg "provision"
+ERR=0
+echo -e ""
 
-result_msg "echo 'ws01' > /etc/hostname" "upd hostname"
+echo -e "${YELLOW}Настраиваю env...${NC}"
 
-if [ "$ERR" -eq 1 ]; then
-    echo -e "${RED}Неудачно!"  
-else
-    echo -e "${GREEN}Все готово!"
-fi
+useradd max -s $(which bash) -G sudo -m
+result_msg "$?" "add user"
+
+sed -i '/password\trequisite\t\t\tpam_pwquality.so/ s/^#*/#/' /etc/pam.d/common-password
+result_msg "$?" "patch pam1"
+
+sed -i 's/pam_unix.so obscure use_authtok try_first_pass yescrypt/pam_unix.so minlen=1 sha512/g' /etc/pam.d/common-password
+result_msg "$?" "patch pam2"
+
+echo 'max:supeRbison' | sudo chpasswd && usermod -U max
+result_msg "$?" "upd maxs pass"
+
+cp -R /home/osboxes/linux-vm /home/max && chown max:max /home/max/linux-vm
+result_msg "$?" "copy repo"
+
+echo 'ws01' > /etc/hostname
+result_msg "$?" "upd hostname"
+
+echo -e ""
+test_msg "creation"
+ERR=0
+echo -e ""
+
+echo -e "${YELLOW}Make tests...${NC}"
 
 
+echo id max
+result_msg "$?" "user max exist"
 
+sudo su osboxes sh -c 'echo supeRbison | su - max -c id'
+result_msg "$?" "user has correct pass"
 
+sshpass -p supeRbison ssh -o StrictHostKeyChecking=no max@localhost 'exit'
+result_msg "$?" "user ssh"
 
+sudo -l -U max | grep ALL
+result_msg "$?" "max can sudo"
 
-
-
-
-
+echo -e ""
+test_msg "tests"
+ERR=0
+echo -e ""
 
 
 
