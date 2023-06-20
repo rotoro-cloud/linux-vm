@@ -91,7 +91,7 @@ result_msg "$?" "upd maxs pass"
 cp -R /home/osboxes/linux-vm /home/max
 result_msg "$?" "copy repo"
 
-chown -R max:max /home/max/linux-vm
+chown -R max:max /home/max/
 result_msg "$?" "perm repo"
 
 echo 'ws01' > /etc/hostname
