@@ -2,7 +2,7 @@
 
 rm -rf /home/max/cave-of-cmds /opt/drak-app/ /usr/local/stegosaurus.pet /etc/stegosaurus.pet /root/stegosaurus.pet /etc/systemd/system/covid.service /usr/bin/stegosaurus.pet /home/max/endless
 rm -rf /tmp/first /tmp/second /tmp/third /tmp/fourth
-rm -rf stars.tar.gz
+rm -rf stars.tar.gz /home/max/letters/
 
 mkdir -p /home/max/cave-of-cmds/cow-house/pile-of-garbage;
 mkdir -p /home/max/cave-of-cmds/stable;
@@ -47,6 +47,12 @@ for i in $(seq 1 500) ; do fallocate -l 24 /home/max/sky/star$i ; done ;
 cd ..
 tar -czf stars.tar.gz sky
 rm -rf /home/max/sky/
+
+
+mkdir -p /home/max/letters/ ;
+cd /home/max/letters/
+for i in {A..Z} ; do echo $i > $i ; done
+xz ./*
 
 
 chown -R max:max /home/max
