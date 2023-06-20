@@ -37,3 +37,10 @@ echo "172.20.20.20 madagascar" > /etc/turtlehosts;
 echo "I am lost..." > /usr/bin/stegosaurus.pet
 
 for i in {1..534};do echo "Wise thought $RANDOM" >> /home/max/endless; done;
+
+mkdir -p /home/max/sky/ ;
+cd /home/max/sky/
+for i in $(seq 1 500) ; do fallocate -l 24 /home/max/sky/star$i ; done ;
+cd ..
+tar -czf stars.tar.gz sky
+rm -rf /home/max/sky/
