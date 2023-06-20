@@ -40,6 +40,12 @@ echo "172.20.20.20 madagascar" > /etc/turtlehosts;
 echo "I am lost..." > /usr/bin/stegosaurus.pet
 
 for i in {1..534};do echo "Wise thought $RANDOM" >> /home/max/endless; done;
+echo "Its ququ" >> /home/max/endless;
+for i in {1..111};do echo "Wise thought $RANDOM" >> /home/max/endless; done;
+echo "ququ here" >> /home/max/endless;
+for i in {1..21};do echo "Wise thought $RANDOM" >> /home/max/endless; done;
+echo "ququ, well you know" >> /home/max/endless;
+for i in {1..51};do echo "Wise thought $RANDOM" >> /home/max/endless; done;
 
 mkdir -p /home/max/sky/ ;
 cd /home/max/sky/
