@@ -1,5 +1,5 @@
 apt update
-apt install -y  nslookup netstat
+apt install -y dnsutils net-tools
 
 echo 10.0.2.20 jump_host >> /etc/hosts
 echo 172.20.236.101 app01 >> /etc/hosts
