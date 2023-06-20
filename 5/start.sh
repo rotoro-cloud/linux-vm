@@ -1,6 +1,7 @@
 #!/bin/bash 
 
 rm -rf /home/max/cave-of-cmds /opt/drak-app/ /usr/local/stegosaurus.pet /etc/stegosaurus.pet /root/stegosaurus.pet /etc/systemd/system/covid.service /usr/bin/stegosaurus.pet /home/max/endless
+rm -rf /tmp/first /tmp/second /tmp/third /tmp/fourth
 
 mkdir -p /home/max/cave-of-cmds/cow-house/pile-of-garbage;
 mkdir -p /home/max/cave-of-cmds/stable;
@@ -11,6 +12,8 @@ mkdir -p /var/games/animals; mkdir -p /var/zoo/south/animals; mkdir -p /var/lib/
 
 echo 'Хорошо, ты умеешь разжимать! ' > /home/max/cave-of-cmds/horse.dat; gzip /home/max/cave-of-cmds/horse.dat;
 
+touch /tmp/first; touch /tmp/second; touch /tmp/fourth;
+touch /tmp/third -d "2020-02-02 20:02:20"
 
 for i in {1..300};do echo "orange file" > /opt/drak-app/red/yellow/orange/orange.$RANDOM; done;
 for i in {1..300};do echo "red file" > /opt/drak-app/yellow/orange/red/red.$RANDOM; done;
