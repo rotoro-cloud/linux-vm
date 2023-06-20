@@ -45,4 +45,3 @@ for i in $(seq 1 500) ; do fallocate -l 24 /home/max/sky/star$i ; done ;
 cd ..
 tar -czf stars.tar.gz sky
 rm -rf /home/max/sky/
-mv stars.tar.gz /home/max
