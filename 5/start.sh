@@ -49,4 +49,4 @@ tar -czf stars.tar.gz sky
 rm -rf /home/max/sky/
 
 
-chown -r max:max /home/max
+chown -R max:max /home/max
