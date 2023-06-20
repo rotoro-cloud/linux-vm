@@ -26,6 +26,8 @@ dd if=/dev/zero of=/root/stegosaurus.pet count=100024 bs=1024;
 
 echo "Roskomnadzor: Telegram, give me the keys!" | base64 > /home/max/tmp/forest/elephant-key
 
+echo "Late last night and the night before, tommyknockers, tommyknockers knocking on my door. I wanna go out, don't know if I can 'cuz I'm so afraid of the tommyknocker man." > /home/max/text.txt
+
 echo "Thing to do: take the 'Ansible for beginners course' by ROTORO.CLOUD" > /opt/drak-app/orange/red/yellow/orange-scroll; 
 echo "dragon.dragon85@gmail.com  mysecretpassword000" > /opt/drak-app/red/yellow/orange/red-scroll;
 echo "Dear dragon, the best medicine for your disease will be the urgent '/etc/systemd/system/covid.service' file deletion. Just delete it! Best regards, Dr. Aibolit." > /opt/drak-app/yellow/orange/red/yellow-scroll; 
