@@ -7,7 +7,7 @@ mkdir -p /home/max/cave-of-cmds/stable;
 mkdir -p /home/max/cave-of-cmds/garbage-dump;
 mkdir -p /opt/drak-app/red/yellow/orange;mkdir -p /opt/drak-app/yellow/orange/red;mkdir -p /opt/drak-app/orange/red/yellow;
 mkdir -p /home/max/tmp/forest/
-mkdir /var/games/animals; mkdir -p /var/zoo/south/animals; mkdir -p /var/lib/docker/animals
+mkdir -p /var/games/animals; mkdir -p /var/zoo/south/animals; mkdir -p /var/lib/docker/animals
 
 echo 'Хорошо, ты умеешь разжимать! ' > /home/max/cave-of-cmds/horse.dat; gzip /home/max/cave-of-cmds/horse.dat;
 
