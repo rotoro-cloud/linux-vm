@@ -88,7 +88,7 @@ result_msg "$?" "patch pam2"
 echo 'max:supeRbison' | sudo chpasswd && usermod -U max
 result_msg "$?" "upd maxs pass"
 
-cp -R /home/osboxes/linux-vm /home/max
+cp -R /home/osboxes/linux-vm/ /home/max
 result_msg "$?" "copy repo"
 
 chown -R max:max /home/max/
