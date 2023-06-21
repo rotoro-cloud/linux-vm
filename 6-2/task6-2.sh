@@ -20,3 +20,5 @@ archive_ip3=$(nslookup security.ubuntu.com | grep Address | grep -E '[0-9]{1,3}\
 archive_ip4=$(nslookup us.archive.ubuntu.com | grep Address | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -vi "\#" | head -1 |awk '{print $2}') && echo $archive_ip4 us.archive.ubuntu.com >> /etc/hosts
 
 archive_ip5=$(nslookup banjo.canonical.com | grep Address | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -vi "\#" | head -1 |awk '{print $2}') && echo $archive_ip5 banjo.canonical.com >> /etc/hosts
+
+archive_ip6=$(nslookup kazooie.canonical.com | grep Address | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -vi "\#" | head -1 |awk '{print $2}') && echo $archive_ip5 kazooie.canonical.com >> /etc/hosts
