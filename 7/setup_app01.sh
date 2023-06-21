@@ -54,9 +54,9 @@ echo -e "${RED}${RED_TEXT}"
 echo -e ""
 
 echo -e "${GREEN}${GREEN_TEXT}"
-echo -e ""
-read -p "${YELLOW}Внимание, перед запуском убедись, что вторая машина работает! Если не уверен нажми CTRL+C${NC}"
-
+echo -e "${YELLOW}"
+read -p "Внимание, перед запуском убедись, что вторая машина работает! Если не уверен нажми CTRL+C"
+echo -e "${NC}"
 
 
 ## sudo echo app01 > cat /etc/hostname
