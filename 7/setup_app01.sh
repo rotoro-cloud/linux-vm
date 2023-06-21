@@ -78,12 +78,12 @@ sed '/app01/d' -i /etc/hosts
 [ -n "$app01" ] && echo "$app01 app01" >> /etc/hosts
 result_msg "$?" "get app ip"
 
-rm -f /home/max/.ssh/id_rsa*
-
 ssh-keygen -q -t rsa -N '' -f  /home/max/.ssh/id_rsa
 result_msg "$?" "keypair created"
 
 chown -R max:max /home/max/.ssh
+
+sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "mkdir -p /home/max/.ssh/"
 
 echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id -f max@app01 <<< yes"
 result_msg "$?" "id copied"
