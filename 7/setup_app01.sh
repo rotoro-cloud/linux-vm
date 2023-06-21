@@ -75,7 +75,7 @@ done;
 
 sed '/app01/d' -i /etc/hosts
 
-[ -n "$app01" ] && echo "$app01 app01"
+[ -n "$app01" ] && sudo echo "$app01 app01" >> /etc/hosts
 result_msg "$?" "get app ip"
 
 rm -f /home/max/.ssh/id_rsa*
