@@ -58,8 +58,8 @@ echo -e "${YELLOW}"
 read -p "Внимание, перед запуском убедись, что вторая машина (app01) работает! Если не уверен нажми CTRL+C"
 echo -e "${NC}"
 
-
- mkdir -p /home/max/.ssh/
+rm -rf /home/max/.ssh/
+mkdir -p /home/max/.ssh/
 
 my_ip=$(ip a | grep "scope global" | grep 192 | awk '{ print $2 }' | awk -F/ '{ print $1 }')
 
