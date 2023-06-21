@@ -1,4 +1,4 @@
-E#!/bin/bash 
+#!/bin/bash 
 
 ERR=0
 
