@@ -59,7 +59,7 @@ read -p "Внимание, перед запуском убедись, что в
 echo -e "${NC}"
 
 
-## sudo echo app01 > cat /etc/hostname
+ mkdir -p /home/max/.ssh/
 
 my_ip=$(ip a | grep "scope global" | grep 192 | awk '{ print $2 }' | awk -F/ '{ print $1 }')
 
