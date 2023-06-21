@@ -83,9 +83,10 @@ result_msg "$?" "keypair created"
 
 chown -R max:max /home/max/.ssh
 
-sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "mkdir -p /home/max/.ssh/"
+#sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "mkdir -p /home/max/.ssh/"
+#echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id -f max@app01 <<< yes"
 
-echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id -f max@app01 <<< yes"
+sshpass -p supeRbison ssh-copy-id -i /home/max/.ssh/id_rsa.pub -f max@app01
 result_msg "$?" "id copied"
 
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo 'app01' > /etc/hostname;\""
