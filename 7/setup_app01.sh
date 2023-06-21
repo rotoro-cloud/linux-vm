@@ -1,4 +1,4 @@
-#!/bin/bash 
+E#!/bin/bash 
 
 ERR=0
 
@@ -73,7 +73,7 @@ for i in {3..254}; do
     fi; 
 done;
 
-sed '/app01/d' /etc/hosts
+sed '/app01/d' -i /etc/hosts
 
 [ -n "$app01" ] && echo "$app01 app01" || result_msg "1" "get app ip"
  
