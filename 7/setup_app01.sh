@@ -83,5 +83,12 @@ rm -f /home/max/.ssh/id_rsa*
 ssh-keygen -q -t rsa -N '' -f  /home/max/.ssh/id_rsa
 result_msg "$?" "keypair created"
 
-sshpass -p supeRbison ssh -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S echo 'app01' > cat /etc/hostname; echo supeRbison | sudo -S echo \"$my_ip ws01\" >> /etc/hosts; cat /etc/hostname; cat /etc/hosts"
+sshpass -p supeRbison ssh-copy-id max@app01
+result_msg "$?" "id copied"
+
+ssh -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S echo 'app01' > cat /etc/hostname;"
+result_msg "$?" "hostname patched"
+
+ssh -o StrictHostKeyChecking=no max@app01  "echo supeRbison | sudo -S echo \"$my_ip ws01\" >> /etc/hosts; cat /etc/hosts"
+result_msg "$?" "hosts pathced"
 
