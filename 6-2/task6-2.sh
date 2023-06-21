@@ -1,5 +1,4 @@
-apt update
-apt install -y dnsutils net-tools curl
+#!/bin/bash 
 
 echo 10.0.2.20 jump_host >> /etc/hosts
 echo 172.20.236.101 app01 >> /etc/hosts
