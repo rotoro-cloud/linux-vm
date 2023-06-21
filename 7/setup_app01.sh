@@ -91,6 +91,6 @@ result_msg "$?" "id copied"
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo 'app01' > /etc/hostname;\""
 result_msg "$?" "hostname patched"
 
-ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo \\\"$my_ip ws01\\\" >> /etc/hostname;cat /etc/hosts\""
+ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo \\\"$my_ip ws01\\\" >> /etc/hosts\""
 result_msg "$?" "hosts pathced"
 
