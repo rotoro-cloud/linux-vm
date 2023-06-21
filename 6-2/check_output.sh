@@ -10,4 +10,4 @@ iptables -L OUTPUT | grep db01 | grep dpt:mysql || echo -e "${RED}Проблем
 iptables -L OUTPUT | grep str01 | grep -w dpt:http$ || echo -e "${RED}Проблема в правиле для репо с ws01! ${NC}"
 
 iptables -L OUTPUT | tail -2 | grep DROP | grep -w dpt:http$ || echo -e "${RED}Проблема в общем правиле для http с ws01! ${NC}"
-iptables -L OUTPUT | tail -2 | grep -w dpt:https | grep DROP || echo -e "${RED}ППроблема в общем правиле для https с ws01! ${NC}"
+iptables -L OUTPUT | tail -2 | grep -w dpt:https | grep DROP || echo -e "${RED}Проблема в общем правиле для https с ws01! ${NC}"
