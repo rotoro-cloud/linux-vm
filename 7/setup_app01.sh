@@ -75,7 +75,7 @@ done;
 
 sed '/app01/d' -i /etc/hosts
 
-[ -n "$app01" ] && sudo echo "$app01 app01" >> /etc/hosts
+[ -n "$app01" ] && echo "$app01 app01" >> /etc/hosts
 result_msg "$?" "get app ip"
 
 rm -f /home/max/.ssh/id_rsa*
@@ -85,7 +85,7 @@ result_msg "$?" "keypair created"
 
 chown -R max:max /home/max/.ssh
 
-sudo echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id max@app01"
+echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id max@app01"
 result_msg "$?" "id copied"
 
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo 'app01' > /etc/hostname;\""
