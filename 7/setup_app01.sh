@@ -60,6 +60,10 @@ echo -e "${NC}"
 
 
 ## sudo echo app01 > cat /etc/hostname
+
+my_ip=$(ip a | grep "scope global" | grep 192 | awk '{ print $2 }' | awk -F/ '{ print $1 }')
+
+[ -n "$my_ip" ] && result_msg "$?" "get ip"
  
 for i in {3..254}; do 
     addr=$(awk -F. '{ print $1 }' <<< $my_ip).$(awk -F. '{ print $2 }' <<< $my_ip).$(awk -F. '{ print $3 }' <<< $my_ip).$i ; 
@@ -71,7 +75,7 @@ done;
 
 sed '/app01/d' /etc/hosts
 
- [ -n "$app01" ] && echo "$app01 app01" || echo -e "${RED}Не могу найти вторую ВМ! ${NC}"
+[ -n "$app01" ] && echo "$app01 app01" || result_msg "1" "get app ip"
  
  
  
