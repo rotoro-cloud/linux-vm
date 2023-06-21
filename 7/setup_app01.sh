@@ -75,11 +75,13 @@ done;
 
 sed '/app01/d' -i /etc/hosts
 
-[ -n "$app01" ] && echo "$app01 app01" || result_msg "1" "get app ip"
- 
- 
- 
- 
- 
- 
- 
+[ -n "$app01" ] && echo "$app01 app01"
+result_msg "$?" "get app ip"
+
+rm -f /home/max/.ssh/id_rsa*
+
+ssh-keygen -q -t rsa -N '' -f  /home/max/.ssh/id_rsa
+result_msg "$?" "keypair created"
+
+sshpass -p supeRbison ssh -o StrictHostKeyChecking=no max@app01 'sudo echo "app01" > cat /etc/hostname; sudo echo "$my_ip ws01" >> /etc/hosts;'
+
