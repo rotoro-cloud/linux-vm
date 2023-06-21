@@ -83,6 +83,7 @@ rm -f /home/max/.ssh/id_rsa*
 ssh-keygen -q -t rsa -N '' -f  /home/max/.ssh/id_rsa
 result_msg "$?" "keypair created"
 
+su max;
 sshpass -p supeRbison ssh-copy-id max@app01
 result_msg "$?" "id copied"
 
