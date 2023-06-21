@@ -96,3 +96,6 @@ ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbi
 result_msg "$?" "hosts pathced"
 
 echo "$my_ip ws01" >> /etc/hosts
+
+ip link set dev $(ip a | grep enp0 | grep '10\.' | awk '{print $NF}') down
+result_msg "$?" "setup lab #1"
