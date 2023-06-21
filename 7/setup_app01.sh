@@ -69,7 +69,11 @@ for i in {3..254}; do
     fi; 
 done;
 
- [ -n "$app01" ] && sed '/xzxz/d' /etc/hosts || echo -e "${RED}Не могу найти вторую ВМ! ${NC}"
+sed '/app01/d' /etc/hosts
+
+ [ -n "$app01" ] && echo "$app01 app01" || echo -e "${RED}Не могу найти вторую ВМ! ${NC}"
+ 
+ 
  
  
  
