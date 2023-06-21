@@ -21,7 +21,7 @@ function result_msg {
 }
 
 
-RED_TEXT="Подожди, пока обе машины не настроятся."
+RED_TEXT="Настраиваем сеть виртуалок. Подожди, пока обе машины не настроятся."
 GREEN_TEXT="https://t.me/RoToRoCloud"
 
 RED='\033[1;31m'
