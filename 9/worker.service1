@@ -1,0 +1,8 @@
+[Unit]
+Description=A template service unit file. Use this to create a service
+
+[Service]
+ExecStart=
+
+[Install]
+WantedBy=multi-user.target
