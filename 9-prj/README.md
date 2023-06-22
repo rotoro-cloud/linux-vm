@@ -37,7 +37,7 @@
   <summary>Добавь запись `bind-address = 0.0.0.0` и `mysqlx-bind-address = 0.0.0.0` в секцию `[mysqld]` файла `/etc/mysql/mysql.conf.d/mysqld.cnf </summary>
   <pre>sudo sed -i 's/bind-address\s*=\s*127\.0\.0\.1$/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf</pre>
 </details>
-<h4>Теперь база готова слушать внешний мир, но ее надо запустить</h4>
+<h4>Теперь база готова слушать внешний мир, но ее надо перезапустить</h4>
 <details> 
   <summary>Запусти БД `mysql` на сервере </summary>
   <pre>sudo systemctl start mysql</pre>
