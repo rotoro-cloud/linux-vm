@@ -61,7 +61,7 @@ userdel -r max
 rm -rf /home/max/
 rm -rf /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
 
-apt install -y ssh sshpass tree plocate dnsutils net-tools curl
+apt install -y ssh sshpass tree plocate dnsutils net-tools curl vim
 result_msg "$?" "install sshd and utils"
 
 systemctl enable ssh --now
