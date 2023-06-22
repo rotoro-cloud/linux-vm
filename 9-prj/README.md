@@ -63,7 +63,11 @@
 </details>
 <details> 
   <summary>Найди в каталоге `/opt/pollme-code/` файл python-зависимостей `requirements.txt` и установи их с помощью менеджера пакетов `PIP` </summary>
-  <pre>sudo pip install -r requirements.txt</pre>
+  <pre>pip install -r requirements.txt</pre>
+</details>
+<details> 
+  <summary>Также отдельно нужно глобально поставить пакет `mysqlclient` через PIP</summary>
+  <pre>sudo pip install mysqlclient</pre>
 </details>
 <h4>Снова запусти команду `python3 manage.py runserver 0.0.0.0:8000`</h4>
 <details> 
