@@ -4,6 +4,8 @@ nat_if=$(ip a | grep "state DOWN" | awk '{ print $2 }' | awk -F: '{ print $1 }')
 
 ip link set dev $nat_if up
 
+rm -rf /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
+
 apt install mysql-server -y
 
 mysqld --initialize-insecure; systemctl start mysql
