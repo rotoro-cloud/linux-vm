@@ -103,4 +103,6 @@ result_msg "$?" "setup lab #1"
 
 test_msg "0" "перезагрузка app01"
 
-sudo shutdown now --reboot
+ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"shutdown now --reboot\""
+
+
