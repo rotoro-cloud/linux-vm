@@ -14,7 +14,7 @@
 <details> 
   <summary>На `app01` сервере раcпакуй скопированный файл в директорию `/opt/` </summary>
    <pre>ssh app01</pre>
-   <pre>tar pollme-code.tar.gz /opt</pre>
+   <pre>tar -xz pollme-code.tar.gz -C /opt</pre>
 </details>
 <details> 
   <summary>Используй команду `rm` для tar-файла `pollme-code.tar.gz` </summary>
