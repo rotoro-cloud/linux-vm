@@ -142,7 +142,8 @@
 Description=PollMe Web App
 
 [Service]
-ExecStart=/usr/bin/python3 manage.py runserver 0.0.0.0:8000 --insecure\nRestart=on-failure
+ExecStart=/usr/bin/python3 manage.py runserver 0.0.0.0:8000 --insecure
+Restart=on-failure
 WorkingDirectory=/opt/pollme-code/pollme
 User=pollme
 
