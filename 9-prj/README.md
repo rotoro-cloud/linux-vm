@@ -22,7 +22,7 @@
 </details>
 <details> 
   <summary>Убедись, что каталог извлечен таким образом, что путь `/opt/pollme-code/pollme/` существует на `app01` </summary>
-  <pre>rm /home/max/pollme-code.tar.gz</pre>
+  <pre>ls -al /opt/pollme-code/pollme/</pre>
 </details>
 
 <h2>Задание 3</h2>
