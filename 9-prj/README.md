@@ -79,11 +79,11 @@
 </details>
 <details> 
   <summary>Замени значение `localhost` на `ws01`</summary>
-   <pre>vi <найденый файл></pre>
+   <pre>sudo vi <найденый файл></pre>
 </details>
 <details> 
   <summary>В том же файле исправь порт `mysql`, чтобы он совпадал с портом, используемым на `ws01`</summary>
-   <pre>vi <найденый файл></pre>
+   <pre>sudo vi <найденый файл></pre>
 </details>
   
 <h4>Проверь подключение командой `mysql -udjangouser -p'PASSWORD' -h ws01 -P 3306 -D lets_quiz`</h4>
