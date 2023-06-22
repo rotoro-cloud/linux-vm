@@ -56,7 +56,11 @@
    <pre>Перейди в директорию `/opt/pollme-code/pollme/`</pre>
    <pre>Запусти команду `python3 manage.py runserver 0.0.0.0:8000`</pre>
 </details>
-<h4>Команда успешна? Приложение запустилось? Нажми `Control + C`, чтобы вернуться в приглашение оболочки</h4>
+<h4>Команда успешна? Приложение запустилось? Нажми `Control + C`, если ты не можешь вернуться в приглашение оболочки</h4>
+<details> 
+  <summary>Установи менеджер пакетов для Python - PIP. Имя пакета `python3-pip` </summary>
+  <pre>sudo apt install python3-pip</pre>
+</details>
 <details> 
   <summary>Найди в каталоге `/opt/pollme-code/` файл python-зависимостей `requirements.txt` и установи их с помощью менеджера пакетов `PIP` </summary>
   <pre>sudo pip install -r requirements.txt</pre>
