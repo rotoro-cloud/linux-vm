@@ -39,8 +39,8 @@
 </details>
 <h4>Теперь база готова слушать внешний мир, но ее надо перезапустить</h4>
 <details> 
-  <summary>Запусти БД `mysql` на сервере </summary>
-  <pre>sudo systemctl start mysql</pre>
+  <summary>Перезапусти БД `mysql` на сервере </summary>
+  <pre>sudo systemctl restart mysql</pre>
 </details>
 <details> 
   <summary>На каком порту запущена `mysql`? Проверь с помощью команды `netstat` </summary>
