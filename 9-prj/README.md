@@ -58,8 +58,8 @@
 </details>
 <h4>Команда успешна? Приложение запустилось? Нажми `Control + C`, если ты не можешь вернуться в приглашение оболочки</h4>
 <details> 
-  <summary>Установи менеджер пакетов для Python - PIP. Имя пакета `python3-pip` </summary>
-  <pre>sudo apt install python3-pip</pre>
+  <summary>Установи необходимые для приложения пакеты-зависимости. Имена пакетов `python3-pip default-libmysqlclient-dev pkg-config mysql-client  python3.10-dev  build-essential  libmysqlclient-dev` </summary>
+  <pre>sudo apt install python3-pip default-libmysqlclient-dev pkg-config mysql-client  python3.10-dev  build-essential  libmysqlclient-dev</pre>
 </details>
 <details> 
   <summary>Найди в каталоге `/opt/pollme-code/` файл python-зависимостей `requirements.txt` и установи их с помощью менеджера пакетов `PIP` </summary>
