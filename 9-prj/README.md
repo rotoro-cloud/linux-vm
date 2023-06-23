@@ -126,14 +126,14 @@
 <h2>Задание 8</h2>
   
 <h4>Создай новую службу c названием `pollme.service` со следующими характеристиками:</h4> 
-<h5>Имя службы: `pollme.service`</h5> 
-<h5>Рабочая директория: `/opt/pollme-code/pollme`</h5> 
-<h5>Команда для запуска: `python3 manage.py runserver 0.0.0.0:8000 --insecure`</h5> 
-<h5>Необходим перезапуск `при сбое`</h5> 
-<h5>Включение на этапе `multi-user.target`</h5> 
-<h5>Запуск от имени пользователя `pollme`</h5> 
-<h5>Описание службы: `PollMe Web App`</h5> 
 <h5>Путь к unit-файлу `/etc/systemd/system`</h5> 
+<h5>Имя службы: `pollme.service`</h5> 
+<h5>Включение на этапе `multi-user.target`</h5> 
+<h5>Описание службы: `PollMe Web App`</h5> 
+<h5>Команда для запуска: `python3 manage.py runserver 0.0.0.0:8000 --insecure`</h5> 
+<h5>Рабочая директория: `/opt/pollme-code/pollme`</h5> 
+<h5>Запуск от имени пользователя `pollme`</h5> 
+<h5>Необходим перезапуск `при сбое`</h5> 
 <h5>Запусти `pollme.service` и сделай ее доступной после перезагрузки</h5> 
   
 <details> 
