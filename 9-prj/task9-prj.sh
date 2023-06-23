@@ -67,8 +67,8 @@ rm -rf /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lo
 apt install mysql-server -y
 result_msg "$?" "install MYSQL"
 
-mysqld --initialize-insecure; 
-result_msg "$?" "init MYSQL"
+#mysqld --initialize-insecure; 
+#result_msg "$?" "init MYSQL"
 
 systemctl start mysql
 result_msg "$?" "start MYSQL"
