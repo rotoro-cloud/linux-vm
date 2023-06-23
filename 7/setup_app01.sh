@@ -102,7 +102,7 @@ echo "$my_ip ws01" >> /etc/hosts
 ip link set dev $(ip a | grep enp0 | grep '10\.' | awk '{print $NF}') down
 result_msg "$?" "setup lab #1"
 
-echo -e "${YELLOW}App01 будет перезагружен"
+echo -e "${YELLOW}App01 будет перезагружен${NC}"
 
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"shutdown now --reboot\""
 
