@@ -86,7 +86,7 @@ chown -R max:max /home/max/.ssh
 #sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "mkdir -p /home/max/.ssh/"
 #echo 'supeRbison' | su max -c "sshpass -p supeRbison ssh-copy-id -f max@app01 <<< yes"
 
-sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "mkdir -p /home/max/.ssh/"
+sshpass -p supeRbison ssh -i /home/max/.ssh/id_rsa.pub -o StrictHostKeyChecking=no max@app01 "rm -rf /home/max/.ssh/; mkdir -p /home/max/.ssh/"
 
 sshpass -p supeRbison ssh-copy-id -i /home/max/.ssh/id_rsa.pub -f max@app01
 result_msg "$?" "id copied"
