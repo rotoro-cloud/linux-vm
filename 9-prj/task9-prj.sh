@@ -88,5 +88,5 @@ result_msg "$?" "data seeding"
 cp /home/max/linux-vm/9-prj/pollme-code.tar.gz /home/max/pollme-code.tar.gz
 result_msg "$?" "upload the code"
 
-ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"groupadd -r pollme;  useradd -r -d /home/max -s /bin/bash -g pollme pollme; chown -R max: /home/max; usermod -a -G max pollme\""
+ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"groupadd -r pollme;  useradd -r -d /home/max -s /bin/bash -g pollme pollme; chown -R max: /home/max; usermod -a -G max pollme; mkdir -p /home/max/.local; chmod g+x /home/max/.local;\""
 result_msg "$?" "app01 provision"
