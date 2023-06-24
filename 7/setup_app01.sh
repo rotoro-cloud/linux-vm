@@ -97,6 +97,9 @@ result_msg "$?" "hostname patched"
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo \\\"$my_ip ws01\\\" >> /etc/hosts\""
 result_msg "$?" "hosts pathced"
 
+ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"sed 's/nameserver.*/nameserver 8.8.8.8/' /etc/resolv.conf\""
+result_msg "$?" "NS pathced"
+
 echo "$my_ip ws01" >> /etc/hosts
 
 ip link set dev $(ip a | grep enp0 | grep '10\.' | awk '{print $NF}') down
