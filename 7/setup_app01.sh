@@ -91,14 +91,17 @@ sshpass -p supeRbison ssh -o StrictHostKeyChecking=no max@app01 "rm -rf /home/ma
 sshpass -p supeRbison ssh-copy-id -i /home/max/.ssh/id_rsa.pub -f max@app01
 result_msg "$?" "id copied"
 
+ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo \\\"127.0.0.1 app01\\\" >> /etc/hosts\""
+result_msg "$?" "hosts patched1"
+
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo 'app01' > /etc/hostname;\""
 result_msg "$?" "hostname patched"
 
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"echo \\\"$my_ip ws01\\\" >> /etc/hosts\""
-result_msg "$?" "hosts pathced"
+result_msg "$?" "hosts patched2"
 
 ssh -i /home/max/.ssh/id_rsa -o StrictHostKeyChecking=no max@app01 "echo supeRbison | sudo -S bash -c \"sed 's/nameserver.*/nameserver 8.8.8.8/' /etc/resolv.conf\""
-result_msg "$?" "NS pathced"
+result_msg "$?" "NS patched"
 
 echo "$my_ip ws01" >> /etc/hosts
 
